@@ -451,8 +451,8 @@ definition {
 		Form.save();
 
 		Click(
-				key_fieldName = "Single Selection",
-				locator1 = "Form#FIELD_LABEL");
+			key_fieldName = "Single Selection",
+			locator1 = "Form#FIELD_LABEL");
 
 		Type(
 			key_rowNumber = "1",
@@ -479,10 +479,6 @@ definition {
 			key_optionLabel = "Option 2",
 			key_position = "2",
 			locator1 = "FormFields#SELECT_ASSERT_RADIO_OPTION_ORDER");
-
-
-
-		
 	}
 
 	@description = "Verify that options can be deleted"
