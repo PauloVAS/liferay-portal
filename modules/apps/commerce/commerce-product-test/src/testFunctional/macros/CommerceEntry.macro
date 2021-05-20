@@ -428,9 +428,6 @@ definition {
 			value1 = "${key_subtotal}");
 
 		Button.clickSave();
-
-
-
 	}
 
 	macro AddShippingOptionVariableRate {
@@ -454,9 +451,6 @@ definition {
 			value1 = "${key_priority}");
 
 		Button.clickSave();
-
-
-
 	}
 
 	macro addSKUsEntry {

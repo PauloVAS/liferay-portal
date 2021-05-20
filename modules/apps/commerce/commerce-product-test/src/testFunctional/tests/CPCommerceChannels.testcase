@@ -307,9 +307,6 @@ definition {
 			key_zip = "0100");
 
 		Alert.viewSuccessMessage();
-
-
-		
 	}
 
 	@description = "This is a test for COMMERCE-6110. AddShippingOptionVariableRate"
