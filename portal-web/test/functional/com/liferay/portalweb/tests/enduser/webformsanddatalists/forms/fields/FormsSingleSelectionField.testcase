@@ -8,7 +8,7 @@ definition {
 
 	setUp {
 		TestCase.setUpPortalInstance();
-
+		
 		User.firstLoginPG();
 	}
 
@@ -431,13 +431,53 @@ definition {
 	}
 
 	@description = "Verify that options can be added"
-	@ignore = "Test Stub"
 	@priority = "5"
 	test OptionsCanBeAdded {
 		property forms.functional = "true";
 		property portal.acceptance = "false";
 
-		// TODO LPS-132205 OptionsCanBeAdded pending implementation
+		ProductMenu.gotoPortlet(
+			category = "Content &amp; Data",
+			portlet = "Forms");
+
+		FormsAdminNavigator.gotoAddForm();
+
+		Form.editName(formName = "Form 1");
+
+		Form.gotoAddField(
+			fieldPositionNumber = "0",
+			fieldType = "Single Selection");
+
+		Form.save();
+
+		Click(
+			key_fieldName = "Single Selection",
+			locator1 = "Form#FIELD_LABEL");
+
+		FormFields.addSingleSelectionOption(
+			optionName = "Option 1",
+			optionValue = "1");
+
+		FormFields.addSingleSelectionOption(
+			optionName = "Option 2",
+			optionValue = "2");
+
+		Form.save();
+
+		FormsAdminNavigator.gotoBack();
+
+		FormsAdminNavigator.gotoEditFormByName(formName = "Form 1");
+
+		FormFields.viewSingleSelectionOption(
+			key_optionLabel = "Option 1",
+			key_position = "1");
+
+		FormFields.viewSingleSelectionOption(
+			key_optionLabel = "Option 2",
+			key_position = "2");
+
+
+
 	}
 
 	@description = "Verify that options can be deleted"
