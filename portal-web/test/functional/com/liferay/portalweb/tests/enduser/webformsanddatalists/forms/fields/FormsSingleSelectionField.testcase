@@ -8,7 +8,7 @@ definition {
 
 	setUp {
 		TestCase.setUpPortalInstance();
-		
+
 		User.firstLoginPG();
 	}
 
@@ -475,9 +475,6 @@ definition {
 		FormFields.viewSingleSelectionOption(
 			key_optionLabel = "Option 2",
 			key_position = "2");
-
-
-
 	}
 
 	@description = "Verify that options can be deleted"
