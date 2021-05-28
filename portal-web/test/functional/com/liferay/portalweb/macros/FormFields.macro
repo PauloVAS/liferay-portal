@@ -59,7 +59,7 @@ definition {
 			key_rowNumber = "${rowNumber}",
 			locator1 = "FormFields#GRID_OPTIONS_OPTION_DELETE_ROW_BUTTON");
 	}
-
+	
 	macro deleteOptionsRow {
 		var key_rowNumber = "${rowNumber}";
 
@@ -145,6 +145,18 @@ definition {
 			value1 = "${fieldValue}");
 
 		Form.gotoBasicTab();
+	}
+
+	macro editFieldPredefined {
+		Form.gotoAdvancedTab();
+
+		Type(
+			locator1 = "FormViewBuilder#SIDEBAR_ADVANCED_PREDEFINED_TEXT",
+			value1 = "${key_fieldReference}");
+		
+
+
+
 	}
 
 	macro editGridOptions {
