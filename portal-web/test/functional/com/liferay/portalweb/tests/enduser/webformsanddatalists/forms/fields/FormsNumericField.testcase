@@ -297,10 +297,6 @@ definition {
 			fieldValue = "123");
 
 		FormPortlet.submitAndViewSuccessPage();
-
-
-				
-
 	}
 
 	@description = "Verify that Predefined Value has higher priority than Placeholder Text for the Numeric Field"
