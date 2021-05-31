@@ -92,7 +92,7 @@ definition {
 		Form.gotoAddField(
 			fieldPositionNumber = "0",
 			fieldType = "Rich Text");
-		
+
 		FormViewBuilder.setFieldRequired();
 
 		Form.save();
@@ -108,13 +108,10 @@ definition {
 		FormPortlet.viewValidationErrorMessage();
 
 		CKEditor.addContentInWebContent(
-            content = "Test",
-            fieldLabel = "Rich Text");
+			content = "Test",
+			fieldLabel = "Rich Text");
 
 		FormPortlet.submitAndViewSuccessPage();
-
-		
-
 	}
 
 	@description = "Verify that a Rich Text Field can be set to repeatable"
