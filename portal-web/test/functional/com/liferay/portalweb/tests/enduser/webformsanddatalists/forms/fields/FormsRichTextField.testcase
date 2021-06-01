@@ -119,7 +119,7 @@ definition {
 		Form.gotoAddField(
 			fieldPositionNumber = "0",
 			fieldType = "Rich Text");
-		
+
 		FormFields.editHelpText(
 			fieldHelpText = "Help Text Test",
 			fieldName = "tip");
@@ -127,11 +127,10 @@ definition {
 		Form.gotoAdvancedTab();
 
 		CKEditor.addContentInWebContent(
-            content = "Rich Text Test",
-            fieldLabel = "Predefined Value");
+			content = "Rich Text Test",
+			fieldLabel = "Predefined Value");
 
 		FormFields.duplicateField();
-
 
 		FormFields.viewTextLabel(
 			fieldLabel = "Rich Text",
@@ -143,13 +142,11 @@ definition {
 
 		FormFields.viewRichTextValue(
 			fieldName = "Predefined Value",
-			fieldValue = "Rich Text Test"
-		);
+			fieldValue = "Rich Text Test");
 
 		FormFields.viewRichTextValue(
 			fieldName = "Field",
-			fieldValue = "Rich Text Test"
-		);		
+			fieldValue = "Rich Text Test");
 
 		FormFields.viewFieldHelpText(
 			fieldHelpText = "Help Text Test",
@@ -158,11 +155,6 @@ definition {
 		FormFields.viewFieldHelpText(
 			fieldHelpText = "Help Text Test",
 			fieldName = "Field");
-		
-		
-		
-
-
 	}
 
 	@description = "Verify that a Rich Text Field can be edited"
