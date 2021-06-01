@@ -524,7 +524,7 @@ definition {
 		FormPortlet.viewSuccessPage(
 			successPageDescription = "Your information was successfully received. Thank you for filling out the form.",
 			successPageTitle = "Thank you.");
-		
+
 		Navigator.openURL();
 
 		ProductMenu.gotoPortlet(
@@ -534,10 +534,6 @@ definition {
 		FormsAdminNavigator.gotoViewEntries();
 
 		FormsAdmin.viewFormEntryWorkflowStatus(formEntryWorkflowStatus = "Pending");
-
-
-
-
 	}
 
 }
