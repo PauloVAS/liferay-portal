@@ -124,11 +124,7 @@ definition {
 			fieldHelpText = "Help Text Test",
 			fieldName = "tip");
 
-		Form.gotoAdvancedTab();
-
-		CKEditor.addContentInWebContent(
-			content = "Rich Text Test",
-			fieldLabel = "Predefined Value");
+		FormFields.editPredefinedValueRichText(key_predefinedValue = "Rich Text Test");
 
 		FormFields.duplicateField();
 
@@ -155,6 +151,9 @@ definition {
 		FormFields.viewFieldHelpText(
 			fieldHelpText = "Help Text Test",
 			fieldName = "Field");
+
+
+			
 	}
 
 	@description = "Verify that a Rich Text Field can be edited"

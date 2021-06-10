@@ -259,6 +259,23 @@ definition {
 			value1 = "${key_predefinedValue}");
 	}
 
+	macro editPredefinedValueRichText {
+		Form.gotoAdvancedTab();
+
+		SelectFrame.selectFrameNoLoading(
+			key_fieldLabel = "Predefined Value",
+			locator1 = "CKEditor#BODY_FIELD_IFRAME_WEB_CONTENT_ARTICLE");
+
+		Type(
+			locator1 = "CKEditor#BODY",
+			value1 = "${key_predefinedValue}");
+
+		SelectFrame(value1 = "relative=top");
+
+
+		
+	}
+
 	macro editRepeatableSingleSelection {
 		var key_rowNumber = "${rowNumber}";
 		var key_optionValue = "${optionValue}";
