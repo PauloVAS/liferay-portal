@@ -271,9 +271,6 @@ definition {
 			value1 = "${key_predefinedValue}");
 
 		SelectFrame(value1 = "relative=top");
-
-
-		
 	}
 
 	macro editRepeatableSingleSelection {

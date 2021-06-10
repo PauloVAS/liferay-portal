@@ -151,9 +151,6 @@ definition {
 		FormFields.viewFieldHelpText(
 			fieldHelpText = "Help Text Test",
 			fieldName = "Field");
-
-
-			
 	}
 
 	@description = "Verify that a Rich Text Field can be edited"
