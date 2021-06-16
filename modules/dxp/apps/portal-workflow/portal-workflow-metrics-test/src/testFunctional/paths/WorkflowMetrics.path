@@ -149,6 +149,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>METRICS_COMPLETION_VELOCITY_TOOLTIP</td>
+	<td>//div[contains(@class,'flex-row autofit-row')]/span[*[name()='svg'][contains(@class,'icon-question')]]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>METRICS_PERFORMANCE_BY_ASSIGNEE_DATE_RANGE_DROPDOWN</td>
 	<td>xpath=(//button[contains(@class, 'dropdown-toggle filter-dropdown-button')])[6]</td>
 	<td></td>
