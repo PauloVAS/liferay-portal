@@ -121,17 +121,12 @@ definition {
 	@description = "LPS-100674 - Verify that the fields From and To are required"
 	@priority = "3"
 	test FromAndToAreRequiredFields {
-
 		WorkflowMetrics.goToWorkflowProcessMetrics(workflowProcessName = "Single Approver");
-	
+
 		WorkflowMetrics.viewPerformanceByStepFromAndToAreRequiredFields(
 			completionVelocityDateRange = "Custom Range",
 			endDateRange = " ",
-			startDateRange = " "
-		);
-
-
-
+			startDateRange = " ");
 	}
 
 	@description = "LPS-100674 - Verify that hovering the info icon next to Performance by Step card will display a tooltip"
