@@ -119,11 +119,18 @@ definition {
 	}
 
 	@description = "LPS-100674 - Verify that the fields From and To are required"
-	@ignore = "Test Stub"
 	@priority = "3"
 	test FromAndToAreRequiredFields {
 
-		// TODO LRQA-67686 FromAndToAreRequiredFields pending implementation
+		WorkflowMetrics.goToWorkflowProcessMetrics(workflowProcessName = "Single Approver");
+	
+		WorkflowMetrics.viewPerformanceByStepFromAndToAreRequiredFields(
+			completionVelocityDateRange = "Custom Range",
+			endDateRange = " ",
+			startDateRange = " "
+		);
+
+
 
 	}
 
