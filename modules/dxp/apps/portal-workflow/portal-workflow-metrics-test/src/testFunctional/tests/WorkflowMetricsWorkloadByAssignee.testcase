@@ -158,7 +158,6 @@ definition {
 	@description = "LPS-103368 - Verify that the user can filter the results inside (Workload by Assignee) page by assignee names that contain non-ascii chars (such as ç,é,コン, etc) using the search field"
 	@priority = "3"
 	test SearchFieldAcceptsNonAsciiChars {
-
 		ApplicationsMenu.gotoPortlet(
 			category = "Workflow",
 			panel = "Applications",
@@ -185,8 +184,8 @@ definition {
 			roleTitle = "Administrator",
 			userEmailAddress = "usertest@liferay.com");
 
-		JSONBlog.addEntry( 
-			entryContent = "Blogs Entry Content", 
+		JSONBlog.addEntry(
+			entryContent = "Blogs Entry Content",
 			entryTitle = "Blogs Entry Title");
 
 		UserBar.gotoDropdownItem(dropdownItem = "My Workflow Tasks");
@@ -194,31 +193,22 @@ definition {
 		Navigator.gotoNavTab(navTab = "Assigned to My Roles");
 
 		Workflow.assignTaskToUser(
-				assetTitle = "Blogs Entry Title",
-				assetType = "Blogs Entry",
-				assigneeName = "Mariã 更新",
-				workflowTask = "Review");
-		
+			assetTitle = "Blogs Entry Title",
+			assetType = "Blogs Entry",
+			assigneeName = "Mariã 更新",
+			workflowTask = "Review");
+
 		WorkflowMetrics.goToWorkflowProcessMetrics(workflowProcessName = "Single Approver");
 
 		Click(
 			key_assigneesNumber = "1",
 			locator1 = "WorkflowMetrics#METRICS_WORKLOAD_BY_ASSIGNEE_CARD_VIEW_ALL_ASSIGNEES_LINK");
 
-
-		WorkflowMetrics.searchForAssigneeName(
-			assigneeName = "更新"
-		);
+		WorkflowMetrics.searchForAssigneeName(assigneeName = "更新");
 
 		AssertElementPresent(
 			key_assigneeName = "Mariã 更新",
 			locator1 = "WorkflowMetrics#METRICS_WORKLOAD_BY_ASSIGNEE_NAME_TABLE");
-
-		
-
-		
-
-
 	}
 
 	@description = "LPS-98518 - Verify that, in (Workload by Assignee) page, the search field has a hint with the message: (Search for assignee name...)"
