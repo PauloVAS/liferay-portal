@@ -394,6 +394,18 @@ definition {
 			site = "${siteName}");
 	}
 
+	macro changePaginationAllItems {
+		Click(locator1 = "WorkflowMetrics#METRICS_ITEMS_PER_PAGE_SELECT");
+
+		var key_itemsPerPage = "${itemsPerPage}";
+
+		MenuItem.click(menuItem = "${itemsPerPage}");
+
+		AssertTextEquals.assertPartialText(
+			locator1 = "Questions#ITEMS_PER_PAGE_SELECT",
+			value1 = "${itemsPerPage}");
+	}
+
 	macro checkCompletedWorkflowValues {
 		AssertTextEquals(
 			locator1 = "WorkflowMetrics#PERFORMANCE_TOTAL_COMPLETED_ITEMS_VALUE",
@@ -861,21 +873,6 @@ definition {
 		Click(locator1 = "WorkflowMetricsSLA#METRICS_MENU_SLA");
 
 		Click(locator1 = "WorkflowMetricsSLA#METRICS_SLA_SETTINGS");
-	}
-
-	macro changePaginationAllItems {
-		Click(locator1 = "WorkflowMetrics#METRICS_ITEMS_PER_PAGE_SELECT");
-
-		var key_itemsPerPage = "${itemsPerPage}";
-
-		MenuItem.click(menuItem = "${itemsPerPage}");
-
-		AssertTextEquals.assertPartialText(
-			locator1 = "Questions#ITEMS_PER_PAGE_SELECT",
-			value1 = "${itemsPerPage}");
-
-
-			
 	}
 
 	macro searchForAssigneeName {
@@ -1388,12 +1385,8 @@ definition {
 
 	macro viewCreatedBySort {
 		AssertElementPresent(
-			locator1 = "WorkflowMetricsProcessListView#ANY_ARROW_ORDER",
-			key_value = "${position}"
-		);
-
-
-
+			key_value = "${position}",
+			locator1 = "WorkflowMetricsProcessListView#ANY_ARROW_ORDER");
 	}
 
 	macro viewDateRangeErrorMessage {

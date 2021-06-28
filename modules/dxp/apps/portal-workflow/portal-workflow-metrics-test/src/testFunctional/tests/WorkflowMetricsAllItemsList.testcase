@@ -95,7 +95,6 @@ definition {
 	@description = "LPS-130218 - Verify that once the order/sorting is made by the user, this definition should be preserved when the user change pagination number"
 	@priority = "3"
 	test CreatedBySortIsPreservedWhenChangesPagination {
-
 		JSONUser.addUser(
 			userEmailAddress = "user2@liferay.com",
 			userFirstName = "user2",
@@ -147,31 +146,30 @@ definition {
 		Workflow.configureWorkflow(
 			workflowDefinition = "Single Approver",
 			workflowResourceValue = "Blogs Entry");
-		
-		JSONBlog.addEntry( 
-			entryContent = "Blogs Entry Content 1", 
+
+		JSONBlog.addEntry(
+			entryContent = "Blogs Entry Content 1",
 			entryTitle = "Blogs Entry Title 1");
 
-		JSONBlog.addEntry( 
-			entryContent = "Blogs Entry Content 2", 
+		JSONBlog.addEntry(
+			entryContent = "Blogs Entry Content 2",
 			entryTitle = "Blogs Entry Title 2");
 
-		JSONBlog.addEntry( 
-			entryContent = "Blogs Entry Content 3", 
+		JSONBlog.addEntry(
+			entryContent = "Blogs Entry Content 3",
 			entryTitle = "Blogs Entry Title 3");
 
 		User.logoutAndLoginPG(
 			userLoginEmailAddress = "user2@liferay.com",
 			userLoginFullName = "user2 user2");
 
-		JSONBlog.addEntry( 
-			entryContent = "Blogs Entry Content 4", 
+		JSONBlog.addEntry(
+			entryContent = "Blogs Entry Content 4",
 			entryTitle = "Blogs Entry Title 4");
 
-		JSONBlog.addEntry( 
-			entryContent = "Blogs Entry Content 5", 
+		JSONBlog.addEntry(
+			entryContent = "Blogs Entry Content 5",
 			entryTitle = "Blogs Entry Title 5");
-
 
 		WorkflowMetrics.goToWorkflowAllItems(workflowProcessName = "Single Approver");
 
@@ -186,11 +184,6 @@ definition {
 		WorkflowMetrics.changePaginationAllItems(itemsPerPage = "20 Entries");
 
 		WorkflowMetrics.viewCreatedBySort(position = "up");
-
-
-
-		
-
 	}
 
 	@description = "LPS-130217 - Verify that the header title Creation Date is underline and bold on mouse hover"
