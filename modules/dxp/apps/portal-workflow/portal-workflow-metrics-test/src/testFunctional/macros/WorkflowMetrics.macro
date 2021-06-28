@@ -863,6 +863,21 @@ definition {
 		Click(locator1 = "WorkflowMetricsSLA#METRICS_SLA_SETTINGS");
 	}
 
+	macro changePaginationAllItems {
+		Click(locator1 = "WorkflowMetrics#METRICS_ITEMS_PER_PAGE_SELECT");
+
+		var key_itemsPerPage = "${itemsPerPage}";
+
+		MenuItem.click(menuItem = "${itemsPerPage}");
+
+		AssertTextEquals.assertPartialText(
+			locator1 = "Questions#ITEMS_PER_PAGE_SELECT",
+			value1 = "${itemsPerPage}");
+
+
+			
+	}
+
 	macro searchForAssigneeName {
 		var key_assigneeName = "${assigneeName}";
 
@@ -1369,6 +1384,16 @@ definition {
 		for (var key_workflowFilterValue : list "${isFilterOptionPresent}") {
 			AssertElementPresent(locator1 = "WorkflowAllItems#WORKFLOW_ALL_ITEMS_FILTER_VALUE");
 		}
+	}
+
+	macro viewCreatedBySort {
+		AssertElementPresent(
+			locator1 = "WorkflowMetricsProcessListView#ANY_ARROW_ORDER",
+			key_value = "${position}"
+		);
+
+
+
 	}
 
 	macro viewDateRangeErrorMessage {
