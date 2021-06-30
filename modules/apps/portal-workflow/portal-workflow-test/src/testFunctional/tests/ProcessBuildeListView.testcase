@@ -56,14 +56,13 @@ definition {
 	@description = "Verify that the user is able to filter by Not Published processes"
 	@priority = "3"
 	test CanFilterByNonPublishedProcesses {
-
 		ApplicationsMenu.gotoPortlet(
 			category = "Workflow",
 			panel = "Applications",
 			portlet = "Process Builder");
 
 		Workflow.duplicateSingleApproverWorkflow(workflowName = "Copy of Single Approver");
-		
+
 		Navigator.gotoBack();
 
 		Workflow.unpublishWorkflowDefinition(workflowDefinitionTitle = "Copy of Single Approver");
@@ -73,12 +72,6 @@ definition {
 		ProcessBuilderListView.viewWorkflowIsPresent(workflowDefinitionTitle = "Copy of Single Approver");
 
 		ProcessBuilderListView.viewWorkflowIsNotPresent(workflowDefinitionTitle = "Single Approver");
-
-		
-
-
-
-
 	}
 
 	@description = "Verify that the user is able to filter by Published processes"
