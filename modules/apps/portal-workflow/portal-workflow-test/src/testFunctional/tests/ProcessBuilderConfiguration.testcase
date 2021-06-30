@@ -99,7 +99,6 @@ definition {
 	@description = "Verify that the user is able to cancel the assignment"
 	@priority = "4"
 	test CanCancelAssignment {
-
 		ApplicationsMenu.gotoPortlet(
 			category = "Workflow",
 			panel = "Applications",
@@ -107,15 +106,10 @@ definition {
 
 		Navigator.gotoNavItem(navItem = "Configuration");
 
-		
 		Workflow.configureWorkflowCancel(
-			workflowResourceValue = "Blogs Entry",
 			workflowDefinition = "Single Approver",
-			workflowDefinitionEnd = "No Workflow"
-		);
-
-		
-
+			workflowDefinitionEnd = "No Workflow",
+			workflowResourceValue = "Blogs Entry");
 	}
 
 	@description = "Verify that the user is able to order by Resource"
