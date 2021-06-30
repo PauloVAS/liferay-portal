@@ -97,11 +97,24 @@ definition {
 	}
 
 	@description = "Verify that the user is able to cancel the assignment"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test CanCancelAssignment {
 
-		// TODO LRQA-68287 CanCancelAssignment pending implementation
+		ApplicationsMenu.gotoPortlet(
+			category = "Workflow",
+			panel = "Applications",
+			portlet = "Process Builder");
+
+		Navigator.gotoNavItem(navItem = "Configuration");
+
+		
+		Workflow.configureWorkflowCancel(
+			workflowResourceValue = "Blogs Entry",
+			workflowDefinition = "Single Approver",
+			workflowDefinitionEnd = "No Workflow"
+		);
+
+		
 
 	}
 
