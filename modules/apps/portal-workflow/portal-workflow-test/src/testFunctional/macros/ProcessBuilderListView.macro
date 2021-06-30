@@ -1,0 +1,40 @@
+definition {
+
+	macro filterAndOrder {
+		
+		Click(locator1 = "Dropdown#FILTER_AND_ORDER");
+
+		Click(
+			locator1 = "ProcessBuilderListView#FILTER_AND_ORDER",
+			key_filterOption = "${filterOption}"
+		);
+
+
+		
+	}
+
+	macro viewWorkflowIsPresent {
+
+		AssertElementPresent(
+			key_workflowDefinitionTitle = "${workflowDefinitionTitle}",
+			locator1 = "WorkflowDefinition#DEFINITION_TABLE_TITLE_PUBLISHED");
+
+
+		
+
+	}
+
+	macro viewWorkflowIsNotPresent {
+
+		AssertElementNotPresent(
+			key_workflowDefinitionTitle = "${workflowDefinitionTitle}",
+			locator1 = "WorkflowDefinition#DEFINITION_TABLE_TITLE_UNPUBLISHED");
+
+
+
+
+
+
+	}
+
+}
