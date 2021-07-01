@@ -180,7 +180,6 @@ definition {
 	@description = "Verify that the Details tab displays the Created date, Last Modified date and Total Modifications"
 	@priority = "3"
 	test DisplaysCreatedDateLastModifiedTotalModifications {
-
 		ApplicationsMenu.gotoPortlet(
 			category = "Workflow",
 			panel = "Applications",
@@ -194,22 +193,11 @@ definition {
 
 		Click(locator1 = "Icon#INFO");
 
-		AssertElementPresent(
-			locator1 = "AssetWorkflow#DETAILS_WORKFLOW_CREATED_DATE"
-		);
+		AssertElementPresent(locator1 = "AssetWorkflow#DETAILS_WORKFLOW_CREATED_DATE");
 
-		AssertElementPresent(
-			locator1 = "AssetWorkflow#DETAILS_WORKFLOW_LAST_MODIFIED"
-		);
+		AssertElementPresent(locator1 = "AssetWorkflow#DETAILS_WORKFLOW_LAST_MODIFIED");
 
-		AssertElementPresent(
-			locator1 = "AssetWorkflow#DETAILS_WORKFLOW_TOTAL_MODIFICATIONS"
-		);
-
-
-
-
-
+		AssertElementPresent(locator1 = "AssetWorkflow#DETAILS_WORKFLOW_TOTAL_MODIFICATIONS");
 	}
 
 	@description = "Verify that the Revision History tab displays the list of modification dates"
