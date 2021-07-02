@@ -752,13 +752,7 @@ definition {
 	}
 
 	macro viewUpdateLabelVisible {
-		AssertVisible(
-			locator1 = "KaleoDesignerEditWorkflow#VIEW_FORM_NODE_UPDATE"
-		);
-
-
-
-		
+		AssertVisible(locator1 = "KaleoDesignerEditWorkflow#VIEW_FORM_NODE_UPDATE");
 	}
 
 	macro viewViewTab {
