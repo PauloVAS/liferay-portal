@@ -131,11 +131,26 @@ definition {
 	}
 
 	@description = "Verify that the user can assign a Workflow to Blog Entry"
-	@ignore = "Test Stub"
 	@priority = "5"
 	test CanAssignWorkflowToBlogEntry {
 
-		// TODO LRQA-68523 CanAssignWorkflowToBlogEntry pending implementation
+		ApplicationsMenu.gotoPortlet(
+			category = "Workflow",
+			panel = "Applications",
+			portlet = "Process Builder");
+
+		Navigator.gotoNavItem(navItem = "Configuration");
+
+		Workflow.configureWorkflow(
+			workflowDefinition = "Single Approver",
+			workflowResourceValue = "Blogs Entry");
+
+		Workflow.viewConfigurationSelected(
+			workflowDefinition = "Single Approver",
+			workflowResourceValue = "Blogs Entry");
+
+
+
 
 	}
 
