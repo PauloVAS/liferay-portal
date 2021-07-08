@@ -133,7 +133,6 @@ definition {
 	@description = "Verify that the user can assign a Workflow to Blog Entry"
 	@priority = "5"
 	test CanAssignWorkflowToBlogEntry {
-
 		ApplicationsMenu.gotoPortlet(
 			category = "Workflow",
 			panel = "Applications",
@@ -148,10 +147,6 @@ definition {
 		Workflow.viewConfigurationSelected(
 			workflowDefinition = "Single Approver",
 			workflowResourceValue = "Blogs Entry");
-
-
-
-
 	}
 
 	@description = "Verify that the user can modify the workflow of a Blog Entry"
