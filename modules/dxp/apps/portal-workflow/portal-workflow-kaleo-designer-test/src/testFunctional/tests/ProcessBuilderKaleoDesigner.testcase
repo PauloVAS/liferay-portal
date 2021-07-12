@@ -136,7 +136,6 @@ definition {
 	@description = "Verify that the user can set transition Default"
 	@priority = "4"
 	test CanSetDefaultTransition {
-
 		ApplicationsMenu.gotoPortlet(
 			category = "Workflow",
 			panel = "Applications",
@@ -157,19 +156,9 @@ definition {
 			nodeType = "start",
 			nodeTypeDestination = "task");
 
-		KaleoDesigner.editConnectorDefault(
-			key_radioOption = "true"
-		);
+		KaleoDesigner.editConnectorDefault(key_radioOption = "true");
 
-		AssertElementPresent(
-			locator1 = "KaleoDesigner#VIEW_VALUE_TRUE_DEFAULT_CONNECTORS"
-		);
-
-		
-
-
-
-
+		AssertElementPresent(locator1 = "KaleoDesigner#VIEW_VALUE_TRUE_DEFAULT_CONNECTORS");
 	}
 
 	@description = "Verify that Condition Node do not have Timers property"
