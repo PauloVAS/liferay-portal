@@ -175,10 +175,6 @@ definition {
 		WorkflowMetrics.goToWorkflowAllItems(workflowProcessName = "Copy of Single Approver");
 
 		WorkflowMetrics.viewAllItemsItemSubject(workflowItemSubject = "Blogs Entry: Blogs 2");
-	
-
-
-	
 	}
 
 	@description = "Verify that the user can publish a Blogs Entry with Workflow assigned"
