@@ -299,7 +299,6 @@ definition {
 	@description = "Verify that the user can filter the results inside Assigned to My Roles by status"
 	@priority = "3"
 	test CanFilterAssignedToMyRolesTaskByAssetStatus {
-
 		ApplicationsMenu.gotoPortlet(
 			category = "Workflow",
 			panel = "Applications",
@@ -311,25 +310,25 @@ definition {
 			workflowDefinition = "Single Approver",
 			workflowResourceValue = "Blogs Entry");
 
-		JSONBlog.addEntry( 
-			entryContent = "Blogs Entry Content", 
+		JSONBlog.addEntry(
+			entryContent = "Blogs Entry Content",
 			entryTitle = "Blogs Entry Title 1");
 
-		JSONBlog.addEntry( 
-			entryContent = "Blogs Entry Content", 
+		JSONBlog.addEntry(
+			entryContent = "Blogs Entry Content",
 			entryTitle = "Blogs Entry Title 2");
 
 		UserBar.gotoDropdownItem(dropdownItem = "My Workflow Tasks");
 
-		 Workflow.assignToMeTaskByActions(
-            workflowAssetTitle = "Blogs Entry Title 1",
-            workflowAssetType = "Blogs Entry",
-            workflowTask = "Review");
+		Workflow.assignToMeTaskByActions(
+			workflowAssetTitle = "Blogs Entry Title 1",
+			workflowAssetType = "Blogs Entry",
+			workflowTask = "Review");
 
 		Workflow.assignToMeTaskByActions(
-            workflowAssetTitle = "Blogs Entry Title 2",
-            workflowAssetType = "Blogs Entry",
-            workflowTask = "Review");
+			workflowAssetTitle = "Blogs Entry Title 2",
+			workflowAssetType = "Blogs Entry",
+			workflowTask = "Review");
 
 		Workflow.approveTaskByActions(
 			workflowAssetTitle = "Blogs Entry Title 1",
@@ -339,9 +338,9 @@ definition {
 		Workflow._gotoPendingFilter();
 
 		Workflow.viewPendingTasks(
-				workflowAssetTitle = "Blogs Entry Title 2",
-				workflowAssetType = "Blogs Entry",
-				workflowTask = "Review");
+			workflowAssetTitle = "Blogs Entry Title 2",
+			workflowAssetType = "Blogs Entry",
+			workflowTask = "Review");
 
 		Workflow.gotoCompletedFilter();
 
@@ -349,11 +348,6 @@ definition {
 			workflowAssetTitle = "Blogs Entry Title 1",
 			workflowAssetType = "Blogs Entry",
 			workflowTask = "Review");
-
-
-
-
-
 	}
 
 	@description = "Verify that the user can open the task details by the table"
