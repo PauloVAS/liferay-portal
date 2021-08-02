@@ -185,6 +185,11 @@
 	<td>//tr[contains(.,'${key_workflowAssetTitle}')]/td//a</td>
 	<td></td>
 </tr>
+<tr>
+	<td>COMPLETED_TABLE_PAGINATION</td>
+	<td>//li[contains(@class,'page-item active')]/a[contains(.,'${key_pageNumber}')]</td>
+	<td></td>
+</tr>
 </tbody>
 </table>
 </body>
