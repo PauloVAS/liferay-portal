@@ -438,12 +438,107 @@ definition {
 	}
 
 	@description = "LPS-101075 - Verify that when the user clicks on View All Steps the Performance by Step page displays the same steps displayed in the card"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test PageDisplaysSameStepsAsCard {
 
-		// TODO LRQA-68930 PageDisplaysSameStepsAsCard pending implementation
+		ApplicationsMenu.gotoSite(site = "Liferay DXP");
 
+		ProductMenu.gotoPortlet(
+			category = "Configuration",
+			panel = "Site Administration",
+			portlet = "Workflow");
+
+		Workflow.configureWorkflow(
+			workflowDefinition = "Single Approver",
+			workflowResourceValue = "Blogs Entry");
+
+		JSONBlog.addEntry(
+			entryContent = "Blogs Entry Content",
+			entryTitle = "Blogs Entry Title");
+
+		UserBar.gotoDropdownItem(dropdownItem = "My Workflow Tasks");
+
+		Workflow.assignToMeTaskByActions(
+			workflowAssetTitle = "Blogs Entry Title",
+			workflowAssetType = "Blogs Entry",
+			workflowTask = "Review");
+
+		Workflow.approveTaskByActions(
+			workflowAssetTitle = "Blogs Entry Title",
+			workflowAssetType = "Blogs Entry",
+			workflowTask = "Review");
+
+		ApplicationsMenu.gotoPortlet(
+			category = "Workflow",
+			panel = "Applications",
+			portlet = "Process Builder");
+
+		Workflow.gotoEditWorkflowDefinition(workflowDefinitionTitle = "Single Approver");
+
+		KaleoDesigner.selectNode(nodeNodeLabel = "update");
+
+		KaleoDesigner.editNodeName(nodeName = "update2");
+
+		KaleoDesigner.selectNode(nodeNodeLabel = "review");
+
+		KaleoDesigner.editNodeName(nodeName = "review2");
+
+		Button.click(button = "Update");
+
+		WorkflowMetrics.goToWorkflowProcessMetrics(workflowProcessName = "Single Approver");
+
+		Click(locator1 = "WorkflowMetrics#METRICS_PERFORMANCE_TAB");
+
+		Click(locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_CARD_VIEW_ALL_STEPS",
+		key_stepsNumber = "3");
+
+		AssertElementPresent(
+			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PAGE_TABLE_STEP_NAME",
+			key_stepName = "Review"
+		);
+
+		AssertElementPresent(
+			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PAGE_TABLE_STEP_NAME",
+			key_stepName = "review2"
+		);
+
+		AssertElementPresent(
+			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PAGE_TABLE_STEP_NAME",
+			key_stepName = "update2"
+		);
+
+		Navigator.gotoBack();
+
+		Click(locator1 = "WorkflowMetricsPerformanceByStep#ALL_VERSIONS_DROPDOWN");
+
+		Click(
+			locator1 = "WorkflowMetricsPerformanceByStep#ALL_VERSIONS_DROPDOWN_OPTION", 
+			key_versionOption = "1.0");
+
+		Click(
+			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_CARD_VIEW_ALL_STEPS",
+			key_stepsNumber = "1");
+
+		AssertElementPresent(
+			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PAGE_TABLE_STEP_NAME",
+			key_stepName = "Review"
+		);
+
+		AssertElementNotPresent(
+			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PAGE_TABLE_STEP_NAME",
+			key_stepName = "review2"
+		);
+
+		AssertElementNotPresent(
+			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PAGE_TABLE_STEP_NAME",
+			key_stepName = "update2"
+		);
+
+
+
+
+
+		
 	}
 
 	@description = "LPS-100678 - Verify that the Performance by Step page displays the specific error state when there is an unexpected error"
