@@ -440,7 +440,6 @@ definition {
 	@description = "LPS-101075 - Verify that when the user clicks on View All Steps the Performance by Step page displays the same steps displayed in the card"
 	@priority = "4"
 	test PageDisplaysSameStepsAsCard {
-
 		ApplicationsMenu.gotoSite(site = "Liferay DXP");
 
 		ProductMenu.gotoPortlet(
@@ -489,56 +488,45 @@ definition {
 
 		Click(locator1 = "WorkflowMetrics#METRICS_PERFORMANCE_TAB");
 
-		Click(locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_CARD_VIEW_ALL_STEPS",
-		key_stepsNumber = "3");
+		Click(
+			key_stepsNumber = "3",
+			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_CARD_VIEW_ALL_STEPS");
 
 		AssertElementPresent(
-			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PAGE_TABLE_STEP_NAME",
-			key_stepName = "Review"
-		);
+			key_stepName = "Review",
+			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PAGE_TABLE_STEP_NAME");
 
 		AssertElementPresent(
-			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PAGE_TABLE_STEP_NAME",
-			key_stepName = "review2"
-		);
+			key_stepName = "review2",
+			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PAGE_TABLE_STEP_NAME");
 
 		AssertElementPresent(
-			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PAGE_TABLE_STEP_NAME",
-			key_stepName = "update2"
-		);
+			key_stepName = "update2",
+			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PAGE_TABLE_STEP_NAME");
 
 		Navigator.gotoBack();
 
 		Click(locator1 = "WorkflowMetricsPerformanceByStep#ALL_VERSIONS_DROPDOWN");
 
 		Click(
-			locator1 = "WorkflowMetricsPerformanceByStep#ALL_VERSIONS_DROPDOWN_OPTION", 
-			key_versionOption = "1.0");
+			key_versionOption = "1.0",
+			locator1 = "WorkflowMetricsPerformanceByStep#ALL_VERSIONS_DROPDOWN_OPTION");
 
 		Click(
-			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_CARD_VIEW_ALL_STEPS",
-			key_stepsNumber = "1");
+			key_stepsNumber = "1",
+			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_CARD_VIEW_ALL_STEPS");
 
 		AssertElementPresent(
-			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PAGE_TABLE_STEP_NAME",
-			key_stepName = "Review"
-		);
+			key_stepName = "Review",
+			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PAGE_TABLE_STEP_NAME");
 
 		AssertElementNotPresent(
-			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PAGE_TABLE_STEP_NAME",
-			key_stepName = "review2"
-		);
+			key_stepName = "review2",
+			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PAGE_TABLE_STEP_NAME");
 
 		AssertElementNotPresent(
-			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PAGE_TABLE_STEP_NAME",
-			key_stepName = "update2"
-		);
-
-
-
-
-
-		
+			key_stepName = "update2",
+			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PAGE_TABLE_STEP_NAME");
 	}
 
 	@description = "LPS-100678 - Verify that the Performance by Step page displays the specific error state when there is an unexpected error"
