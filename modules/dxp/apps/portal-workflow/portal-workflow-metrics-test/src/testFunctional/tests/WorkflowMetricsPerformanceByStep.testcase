@@ -184,12 +184,19 @@ definition {
 	}
 
 	@description = "LPS-101075 - Verify that the default value for the filter is All Versions"
-	@ignore = "Test Stub"
 	@priority = "4"
 	test DefalutFilterValueIsAllVersions {
 
-		// TODO LRQA-68923 DefalutFilterValueIsAllVersions pending implementation
+		WorkflowMetrics.goToWorkflowProcessMetrics(workflowProcessName = "Single Approver");
 
+		Click(locator1 = "WorkflowMetrics#METRICS_PERFORMANCE_TAB");
+
+		AssertTextEquals(
+			locator1 = "WorkflowMetricsPerformanceByStep#ALL_VERSIONS_DROPDOWN",
+			value1 = "All Versions");
+
+			
+		
 	}
 
 	@description = "LPS-100674 - Verify that the default date format for en-US in Custom Range filter is MM/DD/YYYY"

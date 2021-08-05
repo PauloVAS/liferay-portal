@@ -11,6 +11,11 @@
 
 <tbody>
 <tr>
+	<td>ALL_VERSIONS_DROPDOWN</td>
+	<td>//button[contains(.,'All Versions')]</td>
+	<td></td>
+</tr>
+<tr>
 	<td>DATE_RANGE_DROPDOWN</td>
 	<td>xpath=(//button[contains(@class, 'filter-dropdown-button')])[2]</td>
 	<td></td>
