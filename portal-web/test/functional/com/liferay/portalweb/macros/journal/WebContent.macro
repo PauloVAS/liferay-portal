@@ -1826,20 +1826,13 @@ definition {
 
 		Click(locator1 = "WCEditWebContent#KEBAB_DROPDOWN");
 
-		Click(
-			locator1 = "WCEditWebContent#EDIT_OPTION_MENU"
-		);
+		Click(locator1 = "WCEditWebContent#EDIT_OPTION_MENU");
 
 		Select(
-				locator1 = "Select#WORKFLOW_DEFAULT",
-				value1 = "Single Approver");
+			locator1 = "Select#WORKFLOW_DEFAULT",
+			value1 = "Single Approver");
 
 		Button.clickSave();
-
-		
-
-
-
 	}
 
 	macro selectTemplateCP {
