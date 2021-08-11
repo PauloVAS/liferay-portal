@@ -1821,6 +1821,27 @@ definition {
 		}
 	}
 
+	macro selectSingleApprover {
+		Click.clickAt(locator1 = "Icon#INFO");
+
+		Click(locator1 = "WCEditWebContent#KEBAB_DROPDOWN");
+
+		Click(
+			locator1 = "WCEditWebContent#EDIT_OPTION_MENU"
+		);
+
+		Select(
+				locator1 = "Select#WORKFLOW_DEFAULT",
+				value1 = "Single Approver");
+
+		Button.clickSave();
+
+		
+
+
+
+	}
+
 	macro selectTemplateCP {
 		ScrollBy(value1 = "0, 50");
 
