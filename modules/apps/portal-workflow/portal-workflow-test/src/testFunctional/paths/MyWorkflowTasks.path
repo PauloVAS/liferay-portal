@@ -185,6 +185,11 @@
 	<td>//tr[contains(.,'${key_workflowAssetTitle}')]/td//a</td>
 	<td></td>
 </tr>
+<tr>
+	<td>PROCESS_NAME_TABLE_ROW</td>
+	<td>//tr[${key_rowNumber}]//td[1]</td>
+	<td></td>
+</tr>
 </tbody>
 </table>
 </body>
