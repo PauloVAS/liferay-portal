@@ -27,30 +27,18 @@ definition {
 			value1 = "${dueDate}");
 
 		Workflow.confirmWorkflowAction();
-
-
-
-
 	}
 
 	macro viewErrorRequestFailed {
 		AssertTextPresent(
 			locator1 = "Message#ERROR",
 			value1 = "Your request failed to complete.");
-
-
 	}
 
 	macro viewErrorValidDueDate {
 		AssertTextEquals.assertPartialText(
 			locator1 = "Message#ERROR_DISMISSIBLE",
 			value1 = "Please enter a valid due date.");
-
-
-
-
 	}
-
-		
 
 }
