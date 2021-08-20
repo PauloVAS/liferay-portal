@@ -31,16 +31,6 @@ definition {
 			value1 = "${dueDateTime}");
 
 		Workflow.confirmWorkflowAction();
-
-		
-
-
-
-
-
-
-
-
 	}
 
 }
