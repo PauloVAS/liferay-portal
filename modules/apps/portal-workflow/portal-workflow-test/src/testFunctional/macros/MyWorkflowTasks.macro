@@ -1,0 +1,46 @@
+definition {
+
+	macro updateDueDateAtMyWorkflowTastks {
+		Workflow.viewTaskAssignedToMyRoles(
+			ddlDataDefinitionName = "Data Definition Name",
+			workflowAssetTitle = "Blogs Entry Title 1",
+			workflowAssetType = "Blogs Entry",
+			workflowTask = "Review");
+
+		Workflow.gotoTaskAssignedToMyRolesActionsCmd(
+			workflowAssetTitle = "Blogs Entry Title 1",
+			workflowTask = "Review");
+
+		var key_workflowAssetTitle = "${workflowAssetTitle}";
+		var key_workflowTask = "${workflowTask}";
+
+		MenuItem.click(menuItem = "Update Due Date");
+
+		SelectFrame(locator1 = "MyWorkflowTasks#IFRAME_UPDATE_DUE_DATE");
+
+		SelectFrame(locator1 = "WorkflowDefinition#DIALOG_BOX_BODY");
+
+		SelectFrame(locator1 = "IFrame#IFRAME");
+
+		Type(
+			locator1 = "MyWorkflowTasks#DIALOG_BOX_DUE_DATE",
+			value1 = "${dueDate}");
+
+		Type(
+			locator1 = "MyWorkflowTasks#DIALOG_BOX_DUE_DATE_TIME",
+			value1 = "${dueDateTime}");
+
+		Workflow.confirmWorkflowAction();
+
+		
+
+
+
+
+
+
+
+
+	}
+
+}
