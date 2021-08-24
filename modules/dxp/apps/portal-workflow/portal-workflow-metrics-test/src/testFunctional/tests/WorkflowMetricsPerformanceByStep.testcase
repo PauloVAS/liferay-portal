@@ -79,9 +79,7 @@ definition {
 	@description = "LPS-130215 - Verify that the user is not able so select more than one version"
 	@priority = "3"
 	test CanNotSelectMoreThanOneVersion {
-
-		 Navigator.openURL();
-
+		Navigator.openURL();
 
 		ProductMenu.gotoPortlet(
 			category = "Configuration",
@@ -116,7 +114,7 @@ definition {
 		KaleoDesigner.addConnectorViaViewTab(
 			connectorName = "Connection1",
 			nodeType = "start",
-			nodeTypeDestination = "state");	
+			nodeTypeDestination = "state");
 
 		Button.click(button = "Update");
 
@@ -126,33 +124,19 @@ definition {
 
 		WorkflowMetricsPerformanceByStep.clickViewAllSteps(
 			stepsNumber = "2",
-			valueSteps = "View All Steps (2)"
-		);
+			valueSteps = "View All Steps (2)");
 
-		WorkflowMetricsPerformanceByStep.selectProcessVersion(
-			versionOption = "1.0"
-		);
+		WorkflowMetricsPerformanceByStep.selectProcessVersion(versionOption = "1.0");
 
-		WorkflowMetricsPerformanceByStep.selectProcessVersion(
-			versionOption = "2.0"
-		);
+		WorkflowMetricsPerformanceByStep.selectProcessVersion(versionOption = "2.0");
 
 		AssertElementPresent(
-			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PROCESS_VERSION_DROPDOWN_SELECTED",
-			key_versionOption = "2.0"
-		);
+			key_versionOption = "2.0",
+			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PROCESS_VERSION_DROPDOWN_SELECTED");
 
 		AssertElementNotPresent(
-			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PROCESS_VERSION_DROPDOWN_SELECTED",
-			key_versionOption = "1.0"
-		);
-
-
-
-
-
-
-
+			key_versionOption = "1.0",
+			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PROCESS_VERSION_DROPDOWN_SELECTED");
 	}
 
 	@description = "LPS-101075 - Verify that the filter offers an option to see all version together"

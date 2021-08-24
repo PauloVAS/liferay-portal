@@ -2,12 +2,9 @@ definition {
 
 	macro clickViewAllSteps {
 		Click(
-			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_CARD_VIEW_ALL_STEPS",
 			key_stepsNumber = "${stepsNumber}",
+			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_CARD_VIEW_ALL_STEPS",
 			value1 = "${valueSteps}");
-
-
-
 	}
 
 	macro searchForStep {
@@ -35,17 +32,11 @@ definition {
 	}
 
 	macro selectProcessVersion {
-		Click(
-			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PROCESS_VERSION"
-		);
+		Click(locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PROCESS_VERSION");
 
 		Click(
-			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PROCESS_VERSION_DROPDOWN_OPTION",
-			key_versionOption = "${versionOption}"
-		);
-
-
-
+			key_versionOption = "${versionOption}",
+			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PROCESS_VERSION_DROPDOWN_OPTION");
 	}
 
 	macro viewPerformanceByStepTooltip {
