@@ -77,11 +77,81 @@ definition {
 	}
 
 	@description = "LPS-130215 - Verify that the user is not able so select more than one version"
-	@ignore = "Test Stub"
 	@priority = "3"
 	test CanNotSelectMoreThanOneVersion {
 
-		// TODO LRQA-68934 CanNotSelectMoreThanOneVersion pending implementation
+		 Navigator.openURL();
+
+
+		ProductMenu.gotoPortlet(
+			category = "Configuration",
+			panel = "Site Administration",
+			portlet = "Workflow");
+
+		Workflow.configureWorkflow(
+			workflowDefinition = "Single Approver",
+			workflowResourceValue = "Blogs Entry");
+
+		ApplicationsMenu.gotoPortlet(
+			category = "Workflow",
+			panel = "Applications",
+			portlet = "Process Builder");
+
+		Workflow.gotoEditWorkflowDefinition(workflowDefinitionTitle = "Single Approver");
+
+		Type(
+			locator1 = "WorkflowDefinition#DEFINITION_TITLE",
+			value1 = "Single Approver Updated");
+
+		Button.click(button = "Update");
+
+		KaleoDesigner.addNodeViaViewTab(
+			nodeDescription = "State Node Description",
+			nodeName = "state",
+			nodeNodeLabel = "state",
+			nodeType = "state");
+
+		KaleoDesigner.selectNode(nodeNodeLabel = "created");
+
+		KaleoDesigner.addConnectorViaViewTab(
+			connectorName = "Connection1",
+			nodeType = "start",
+			nodeTypeDestination = "state");	
+
+		Button.click(button = "Update");
+
+		WorkflowMetrics.goToWorkflowProcessMetrics(workflowProcessName = "Single Approver");
+
+		Click(locator1 = "WorkflowMetrics#METRICS_PERFORMANCE_TAB");
+
+		WorkflowMetricsPerformanceByStep.clickViewAllSteps(
+			stepsNumber = "2",
+			valueSteps = "View All Steps (2)"
+		);
+
+		WorkflowMetricsPerformanceByStep.selectProcessVersion(
+			versionOption = "1.0"
+		);
+
+		WorkflowMetricsPerformanceByStep.selectProcessVersion(
+			versionOption = "2.0"
+		);
+
+		AssertElementPresent(
+			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PROCESS_VERSION_DROPDOWN_SELECTED",
+			key_versionOption = "2.0"
+		);
+
+		AssertElementNotPresent(
+			locator1 = "WorkflowMetricsPerformanceByStep#METRICS_PERFORMANCE_BY_STEP_PROCESS_VERSION_DROPDOWN_SELECTED",
+			key_versionOption = "1.0"
+		);
+
+
+
+
+
+
 
 	}
 
