@@ -66,6 +66,26 @@
 		<td></td>
 	</tr>
 	<tr>
+		<td>OBJECT_FIELDS_LABEL_INPUT</td>
+		<td>//input[contains(@id,'objectFieldLabel')]</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>OBJECT_FIELDS_NAME_INPUT</td>
+		<td>//input[contains(@id,'objectFieldName')]</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>OBJECT_FIELDS_MANDATORY_TOGGLE_SWITCH</td>
+		<td>//input[contains(@class,'toggle-switch-check')]</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>OBJECT_FIELDS_TYPE</td>
+		<td>//select[contains(@id,'objectFieldType')]</td>
+		<td></td>
+	</tr>
+	<tr>
 		<td>FIELDS_RADIO_OPTION</td>
 		<td>//label[contains(.,'${key_radioOption}')]/input[@type='radio']</td>
 		<td></td>

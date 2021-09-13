@@ -26,6 +26,36 @@ definition {
 			userPassword = "${userPassword}");
 	}
 
+	macro addObjectFieldViaUI {
+		LexiconEntry.gotoAdd();
+
+		Type(
+				locator1 = "ObjectAdmin#OBJECT_FIELDS_LABEL_INPUT",
+				value1 = "${fieldLabel}");
+
+		if ("${typeName}" == "true") {
+		Type(
+				locator1 = "ObjectAdmin#OBJECT_FIELDS_NAME_INPUT",
+				value1 = "${fieldName}");
+		}
+
+		Select(
+			locator1 = "ObjectAdmin#OBJECT_FIELDS_TYPE",
+			value1 = "${fieldType}");
+
+		if ("${isMandatory}" == "true") {
+			Check.checkToggleSwitch(
+			locator1 = "ObjectAdmin#OBJECT_FIELDS_MANDATORY_TOGGLE_SWITCH");
+		}
+
+
+		Button.clickSave();
+
+
+
+
+	}
+
 	macro addObjectSingleFieldEntryViaAPI {
 		JSONObject.addObjectSingleFieldEntry(
 			fieldName = "${fieldName}",
@@ -123,6 +153,12 @@ definition {
 			key_name = "${name}",
 			key_system = "No",
 			locator1 = "ObjectAdmin#VIEW_OBJECT");
+	}
+
+	macro viewFieldNameErrorMessage {
+		AssertTextEquals(
+			locator1 = "Message#ERROR",
+			value1 = "Name must only contain letters and digits");
 	}
 
 	macro viewFieldSearchableSectionLanguage {
