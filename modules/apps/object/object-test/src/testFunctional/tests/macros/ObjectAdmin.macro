@@ -118,11 +118,36 @@ definition {
 		Click(locator1 = "ObjectAdmin#SAVE_CUSTOM_OBJECT");
 	}
 
+	macro selectCustomObjectFieldKebabMenuOption {
+		Click(locator1 = "ObjectAdmin#KEBAB_MENU");
+
+		Click(
+			locator1 = "ObjectAdmin#KEBAB_MENU_OPTION",
+			kebabOption = "${kebabOption}");
+
+
+	}
+
 	macro viewCustomObject {
 		AssertElementPresent(
 			key_name = "${name}",
 			key_system = "No",
 			locator1 = "ObjectAdmin#VIEW_OBJECT");
+	}
+
+	macro viewFieldDetails {
+		SelectFrame(locator1 = "IFrame#IFRAME");	
+
+		AssertElementPresent(
+			locator1 = "ObjectAdmin#FIELDS_DETAILS_IFRAME"
+		);
+
+		AssertElementPresent(
+			locator1 = "ObjectAdmin#FIELDS_DETAILS_TITLE"
+		);
+
+
+
 	}
 
 	macro viewFieldSearchableSectionLanguage {
