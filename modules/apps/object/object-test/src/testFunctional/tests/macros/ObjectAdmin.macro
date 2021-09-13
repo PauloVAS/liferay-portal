@@ -122,10 +122,8 @@ definition {
 		Click(locator1 = "ObjectAdmin#KEBAB_MENU");
 
 		Click(
-			locator1 = "ObjectAdmin#KEBAB_MENU_OPTION",
-			kebabOption = "${kebabOption}");
-
-
+			kebabOption = "${kebabOption}",
+			locator1 = "ObjectAdmin#KEBAB_MENU_OPTION");
 	}
 
 	macro viewCustomObject {
@@ -136,18 +134,11 @@ definition {
 	}
 
 	macro viewFieldDetails {
-		SelectFrame(locator1 = "IFrame#IFRAME");	
+		SelectFrame(locator1 = "IFrame#IFRAME");
 
-		AssertElementPresent(
-			locator1 = "ObjectAdmin#FIELDS_DETAILS_IFRAME"
-		);
+		AssertElementPresent(locator1 = "ObjectAdmin#FIELDS_DETAILS_IFRAME");
 
-		AssertElementPresent(
-			locator1 = "ObjectAdmin#FIELDS_DETAILS_TITLE"
-		);
-
-
-
+		AssertElementPresent(locator1 = "ObjectAdmin#FIELDS_DETAILS_TITLE");
 	}
 
 	macro viewFieldSearchableSectionLanguage {
