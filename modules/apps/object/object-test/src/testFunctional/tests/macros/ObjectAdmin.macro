@@ -30,11 +30,11 @@ definition {
 		LexiconEntry.gotoAdd();
 
 		Type(
-				locator1 = "ObjectAdmin#OBJECT_FIELDS_LABEL_INPUT",
-				value1 = "${fieldLabel}");
+			locator1 = "ObjectAdmin#OBJECT_FIELDS_LABEL_INPUT",
+			value1 = "${fieldLabel}");
 
 		if ("${typeName}" == "true") {
-		Type(
+			Type(
 				locator1 = "ObjectAdmin#OBJECT_FIELDS_NAME_INPUT",
 				value1 = "${fieldName}");
 		}
@@ -44,16 +44,10 @@ definition {
 			value1 = "${fieldType}");
 
 		if ("${isMandatory}" == "true") {
-			Check.checkToggleSwitch(
-			locator1 = "ObjectAdmin#OBJECT_FIELDS_MANDATORY_TOGGLE_SWITCH");
+			Check.checkToggleSwitch(locator1 = "ObjectAdmin#OBJECT_FIELDS_MANDATORY_TOGGLE_SWITCH");
 		}
 
-
 		Button.clickSave();
-
-
-
-
 	}
 
 	macro addObjectSingleFieldEntryViaAPI {

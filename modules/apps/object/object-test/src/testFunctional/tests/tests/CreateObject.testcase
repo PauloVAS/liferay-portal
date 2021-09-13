@@ -190,7 +190,6 @@ definition {
 	@description = "LPS-135549 - Verify it is not possible to save with special characters for the Field Name"
 	@priority = "4"
 	test CannotSaveSpecialCharacterFieldName {
-
 		ObjectAdmin.addObjectViaAPI(
 			labelName = "Custom Object",
 			objectName = "CustomObject",
@@ -206,17 +205,12 @@ definition {
 
 		ObjectAdmin.addObjectFieldViaUI(
 			fieldLabel = "Custom Field",
-			typeName = "true",
 			fieldName = "customField#$%",
 			fieldType = "Long",
-			isMandatory = "false"
-		);
+			isMandatory = "false",
+			typeName = "true");
 
 		ObjectAdmin.viewFieldNameErrorMessage();
-
-
-
-
 	}
 
 	@description = "LPS-135549 - Verify it is not possible to save with the first character of the Field Name in upper case"
