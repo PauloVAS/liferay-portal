@@ -1,5 +1,20 @@
 definition {
 
+	macro asssertCannotLeaveObjectNameFieldBlank {
+		Type(
+			locator1 = "ObjectAdmin#NAME_CUSTOM_OBJECT",
+			value1 = " ");
+
+		Button.clickSave();
+
+		AssertTextEquals(
+			locator1 = "Message#ERROR",
+			value1 = "Name is null");
+
+
+			
+	}
+
 	macro assertObjectFieldNameIsAutofilled {
 		LexiconEntry.gotoAdd();
 
