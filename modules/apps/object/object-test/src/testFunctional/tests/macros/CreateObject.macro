@@ -1,5 +1,23 @@
 definition {
 
+	macro assertCannotCreateDuplicatedObjectName {
+		ObjectAdmin.addNewObject(
+			fieldLabelName = "Custom Object",
+			pluralLabelName = "Custom Objects"
+		);
+
+		Button.clickSave();
+
+		var objectName = selenium.getElementValue("ObjectAdmin#NAME_CUSTOM_OBJECT");
+
+		AssertTextEquals(
+			locator1 = "Message#ERROR",
+			value1 = "Duplicate name C_${objectName}");
+
+
+			
+	}
+
 	macro assertObjectFieldNameIsAutofilled {
 		LexiconEntry.gotoAdd();
 
