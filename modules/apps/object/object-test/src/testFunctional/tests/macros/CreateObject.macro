@@ -2,7 +2,6 @@ definition {
 
 	macro assertCannotSaveLowerCaseObjectName {
 		var objectName = selenium.getElementValue("ObjectAdmin#NAME_CUSTOM_OBJECT");
-		
 
 		Type(
 			locator1 = "ObjectAdmin#NAME_CUSTOM_OBJECT",
@@ -13,9 +12,6 @@ definition {
 		AssertTextEquals(
 			locator1 = "Message#ERROR",
 			value1 = "The first character of a name must be an upper case letter");
-
-
-			
 	}
 
 	macro assertObjectFieldNameIsAutofilled {
