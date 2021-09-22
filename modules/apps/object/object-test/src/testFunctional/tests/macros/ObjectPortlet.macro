@@ -30,9 +30,6 @@ definition {
 		KeyPress(
 			locator1 = "ObjectPortlet#SEARCH_FIELD",
 			value1 = "\RETURN");
-
-
-
 	}
 
 	macro selectCustomObject {
