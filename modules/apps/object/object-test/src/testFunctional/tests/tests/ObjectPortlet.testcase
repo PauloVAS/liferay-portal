@@ -177,8 +177,8 @@ definition {
 			isRequired = "false",
 			objectName = "CustomObject");
 
-		ObjectAdmin.openObjectAdmin();  
-		
+		ObjectAdmin.openObjectAdmin();
+
 		ObjectPortlet.selectCustomObject(label = "Custom Object");
 
 		CreateObject.selectObjectScope(scopeFieldKey = "Site");
@@ -199,14 +199,6 @@ definition {
 		ObjectAdmin.addObjectStringFieldEntrySiteViaUI(entryValue = "Test Entry");
 
 		ObjectPortlet.viewEntry(entry = "Test Entry");
-
-
-
-
-
-
-		
-
 	}
 
 	@description = "LPS-140081 - Verify it is possible to add an entry without selecting a value for a Picklist field that is not required"

@@ -110,9 +110,6 @@ definition {
 		Select(
 			locator1 = "CreateObject#SCOPE_FIELD",
 			value1 = "${scopeFieldKey}");
-
-
-
 	}
 
 	macro selectPanelCategoryKey {
