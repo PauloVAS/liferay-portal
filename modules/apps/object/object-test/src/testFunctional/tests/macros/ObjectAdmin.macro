@@ -156,6 +156,23 @@ definition {
 		WaitForPageLoad();
 	}
 
+	macro addObjectStringFieldEntrySiteViaUI {
+		LexiconEntry.gotoAdd();
+
+		Type(
+			locator1 = "ObjectAdmin#SITE_ENTRY_STRING_VALUE_FIELD",
+			value1 = "${entryValue}");
+
+		Button.clickSave();
+
+		WaitForPageLoad();
+
+
+
+	}
+
+
+
 	macro addObjectViaAPI {
 		JSONObject.addObject(
 			labelName = "${labelName}",

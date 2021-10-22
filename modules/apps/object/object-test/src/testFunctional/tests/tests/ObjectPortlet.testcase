@@ -160,6 +160,55 @@ definition {
 		ObjectPortlet.viewEntry(entry = "12345");
 	}
 
+	@description = "LPS-135396 - Verify it is possible to add an entry on an object scoped by Site"
+	@priority = "5"
+	test CanAddEntryObjectScopedBySite {
+		property portal.acceptance = "true";
+
+		ObjectAdmin.addObjectViaAPI(
+			labelName = "Custom Object",
+			objectName = "CustomObject",
+			pluralLabelName = "Custom Objects");
+
+		ObjectAdmin.addObjectFieldViaAPI(
+			fieldLabelName = "Field",
+			fieldName = "customObjectField",
+			fieldType = "String",
+			isRequired = "false",
+			objectName = "CustomObject");
+
+		ObjectAdmin.openObjectAdmin();  
+		
+		ObjectPortlet.selectCustomObject(label = "Custom Object");
+
+		CreateObject.selectObjectScope(scopeFieldKey = "Site");
+
+		CreateObject.selectPanelCategoryKey(panelCategoryKey = "Site Administration > Design");
+
+		ObjectAdmin.publishObjectViaUI();
+
+		ApplicationsMenu.gotoSite(site = "Liferay DXP");
+
+		ProductMenu.gotoPortlet(
+			category = "Design",
+			panel = "Site Administration",
+			portlet = "Custom Objects");
+
+		Refresh();
+
+		ObjectAdmin.addObjectStringFieldEntrySiteViaUI(entryValue = "Test Entry");
+
+		ObjectPortlet.viewEntry(entry = "Test Entry");
+
+
+
+
+
+
+		
+
+	}
+
 	@description = "LPS-140081 - Verify it is possible to add an entry without selecting a value for a Picklist field that is not required"
 	@priority = "4"
 	test CanAddEntryWithoutSelectingPicklist {

@@ -106,6 +106,15 @@ definition {
 		Click(locator1 = "CreateObject#SAVE_BUTTON");
 	}
 
+	macro selectObjectScope {
+		Select(
+			locator1 = "CreateObject#SCOPE_FIELD",
+			value1 = "${scopeFieldKey}");
+
+
+
+	}
+
 	macro selectPanelCategoryKey {
 		Select(
 			locator1 = "CreateObject#PANEL_CATEGORY_KEY",

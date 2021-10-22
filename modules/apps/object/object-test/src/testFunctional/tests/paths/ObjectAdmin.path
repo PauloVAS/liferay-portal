@@ -176,6 +176,11 @@
 		<td></td>
 	</tr>
 	<tr>
+		<td>SITE_ENTRY_STRING_VALUE_FIELD</td>
+		<td>//input[contains(@class,'form-control') and contains(@type,'text')]</td>
+		<td></td>
+	</tr>
+	<tr>
 		<td>OBJECT_FIELDS_PICKLIST</td>
 		<td>//label[contains(text(),'Picklist')]/following-sibling::select</td>
 		<td></td>
