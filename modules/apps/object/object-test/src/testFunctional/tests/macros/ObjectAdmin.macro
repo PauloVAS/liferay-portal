@@ -169,7 +169,7 @@ definition {
 
 	macro assertAddEntryModalIsNotPresent {
 		AssertElementNotPresent(locator1 = "ObjectAdmin#ENTRY_STRING_VALUE_FIELD");
-		
+
 		AssertElementNotPresent(locator1 = "ObjectAdmin#ADD_ENTRY_SAVE_BUTTON");
 
 		AssertElementNotPresent(locator1 = "ObjectAdmin#ADD_ENTRY_CANCEL_BUTTON");
@@ -281,11 +281,7 @@ definition {
 		AssertElementNotPresent(locator1 = "ObjectAdmin#ADD_ENTRY_SAVE_BUTTON");
 
 		AssertElementNotPresent(locator1 = "ObjectAdmin#ADD_ENTRY_CANCEL_BUTTON");
-
-		
 	}
-
-
 
 	macro cancelAddingObjectStringFieldEntryViaUI {
 		LexiconEntry.gotoAdd();
@@ -298,15 +294,11 @@ definition {
 	}
 
 	macro cancelUpdatingObjectStringFieldEntryViaUI {
-
 		Type(
 			locator1 = "ObjectAdmin#ENTRY_STRING_VALUE_FIELD",
 			value1 = "${entryValue}");
 
 		Button.clickCancel();
-
-
-		
 	}
 
 	macro changeLabelLanguage {
