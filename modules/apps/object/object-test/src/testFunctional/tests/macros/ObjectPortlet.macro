@@ -96,12 +96,8 @@ definition {
 		ApplicationsMenuHelper.openApplicationsMenu();
 
 		ApplicationsMenu.gotoPanel(panel = "Control Panel");
-	
-		AssertElementPresent(
-			locator1 = "ObjectPortlet#CUSTOM_OBJECT_ON_CONTROL_PANEL");
 
-
-
+		AssertElementPresent(locator1 = "ObjectPortlet#CUSTOM_OBJECT_ON_CONTROL_PANEL");
 	}
 
 	macro assertRelationshipEntrySearchResultsPresent {
@@ -142,9 +138,6 @@ definition {
 
 	macro goToCustomObjectPortletOnControlPanel {
 		Click(locator1 = "ObjectPortlet#CUSTOM_OBJECT_ON_CONTROL_PANEL");
-
-
-
 	}
 
 	macro searchColumn {
