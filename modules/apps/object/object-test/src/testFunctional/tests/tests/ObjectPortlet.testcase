@@ -336,7 +336,6 @@ definition {
 	@description = "LPS-135390 - Verify it is possible to add an Object entry with the Add Object Entry permission"
 	@priority = "4"
 	test CanAddObjectEntryWithAddPermission {
-
 		ObjectAdmin.addObjectViaAPI(
 			labelName = "Custom Object",
 			objectName = "CustomObject",
@@ -375,7 +374,6 @@ definition {
 			roleTitle = "Regular Role",
 			userEmailAddress = "userea@liferay.com");
 
-
 		Role.definePermissionCP(
 			permissionDefinitionKey = "CONTROL_PANEL_CUSTOM_OBJECTS_PERMISSIONS_APLICATION_PERMISSION_ACTION_CHECKBOX",
 			permissionDefinitionValue = "",
@@ -399,7 +397,6 @@ definition {
 
 		ApplicationsMenu.gotoSite(site = "Liferay DXP");
 
-
 		ApplicationsMenu.gotoPortlet(
 			category = "Configuration",
 			panel = "Control Panel",
@@ -414,10 +411,9 @@ definition {
 
 		Navigator.openURL();
 
-
 		User.logoutAndLoginPG(
 			userLoginEmailAddress = "userea@liferay.com",
-			userLoginFullName = "userfn userln");	
+			userLoginFullName = "userfn userln");
 
 		ApplicationsMenu.gotoPortlet(
 			category = "Object",
@@ -426,15 +422,8 @@ definition {
 
 		ObjectAdmin.addObjectStringFieldEntryViaUI(entryValue = "Test Entry");
 
-
 		ObjectPortlet.viewEntry(entry = "Test Entry");
-
-
-		
-
-
-
-	}	
+	}
 
 	@description = "LPS-135396 - Verify it is possible to add a Picklist field on layout"
 	@priority = "4"
