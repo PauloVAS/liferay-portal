@@ -876,7 +876,6 @@ definition {
 			roleTitle = "Regular Role",
 			userEmailAddress = "userea@liferay.com");
 
-
 		Role.definePermissionCP(
 			permissionDefinitionKey = "CONTROL_PANEL_CUSTOM_OBJECTS_PERMISSIONS_APLICATION_PERMISSION_ACTION_CHECKBOX",
 			permissionDefinitionValue = "",
@@ -886,7 +885,6 @@ definition {
 			roleType = "Regular");
 
 		ApplicationsMenu.gotoSite(site = "Liferay DXP");
-
 
 		ApplicationsMenu.gotoPortlet(
 			category = "Configuration",
@@ -902,26 +900,16 @@ definition {
 
 		Navigator.openURL();
 
-
 		User.logoutAndLoginPG(
 			userLoginEmailAddress = "userea@liferay.com",
-			userLoginFullName = "userfn userln");	
+			userLoginFullName = "userfn userln");
 
 		ApplicationsMenu.gotoPortlet(
 			category = "Object",
 			panel = "Control Panel",
 			portlet = "Custom Objects");
 
-		
 		ObjectPortlet.assertButtonPlusIsNotPresent();
-
-
-
-
-
-
-	
-
 	}
 
 	@description = "LPS-135390 - Verify it is not possible to delete an Object entry without the Delete permission"

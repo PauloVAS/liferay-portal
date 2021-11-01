@@ -15,11 +15,7 @@ definition {
 	}
 
 	macro assertButtonPlusIsNotPresent {
-
 		AssertElementNotPresent(locator1 = "Button#PLUS");
-
-
-		
 	}
 
 	macro assertDuplicatedEntryNotPresent {
