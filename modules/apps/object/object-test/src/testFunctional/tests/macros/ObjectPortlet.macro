@@ -16,9 +16,6 @@ definition {
 
 	macro assertDeleteEntryButtonNotPresent {
 		AssertElementNotPresent(locator1 = "ObjectPortlet#DELETE_ENTRY_BUTTON");
-
-
-		
 	}
 
 	macro assertDuplicatedEntryNotPresent {
