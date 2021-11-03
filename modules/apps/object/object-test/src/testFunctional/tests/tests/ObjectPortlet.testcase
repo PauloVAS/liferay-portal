@@ -878,7 +878,6 @@ definition {
 			objectName = "CustomObject",
 			pluralLabelName = "Custom Objects");
 
-
 		ObjectAdmin.addObjectFieldViaAPI(
 			fieldLabelName = "Custom Field",
 			fieldName = "customObjectField",
@@ -917,7 +916,6 @@ definition {
 			roleTitle = "Regular Role",
 			userEmailAddress = "userea@liferay.com");
 
-
 		Role.definePermissionCP(
 			permissionDefinitionKey = "CONTROL_PANEL_CUSTOM_OBJECTS_PERMISSIONS_APLICATION_PERMISSION_ACCESS_CONTROL_PANEL_CHECKBOX",
 			permissionDefinitionValue = "",
@@ -941,7 +939,6 @@ definition {
 
 		ApplicationsMenu.gotoSite(site = "Liferay DXP");
 
-
 		ApplicationsMenu.gotoPortlet(
 			category = "Configuration",
 			panel = "Control Panel",
@@ -956,24 +953,16 @@ definition {
 
 		Navigator.openURL();
 
-
 		User.logoutAndLoginPG(
 			userLoginEmailAddress = "userea@liferay.com",
-			userLoginFullName = "userfn userln");	
+			userLoginFullName = "userfn userln");
 
 		ApplicationsMenu.gotoPortlet(
 			category = "Object",
 			panel = "Control Panel",
 			portlet = "Custom Objects");
 
-
 		ObjectPortlet.assertEntryNotPresent(entry = "Test Entry");
-
-
-
-
-
-
 	}
 
 	@description = "LPS-135390 - Verify it is not possible to view other user's Object entry without the View permission"
