@@ -306,9 +306,6 @@ definition {
 		var key_layoutLabel = "${layoutLabel}";
 
 		AssertElementNotPresent(locator1 = "ObjectAdmin#VIEW_OBJECT_LAYOUT_LABEL");
-
-
-
 	}
 
 	macro assertObjectNameFieldRequired {
@@ -465,11 +462,14 @@ definition {
 	macro goToLayoutsTab {
 		Click(locator1 = "ObjectAdmin#OBJECT_LAYOUTS_TAB");
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 
 
 >>>>>>> baefacc (LPS-141501 Add CanDeleteLayout Test)
+=======
+>>>>>>> d432251 (LPS-141501 SF)
 	}
 
 	macro gotoRelationshipsTab {
