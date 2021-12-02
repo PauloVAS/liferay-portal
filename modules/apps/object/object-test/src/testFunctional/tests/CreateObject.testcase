@@ -107,18 +107,9 @@ definition {
 
 		Navigator.openURL();
 
-		ObjectAdmin.goToCustomObject(objectName = "CustomObject");	
+		ObjectAdmin.goToCustomObject(objectName = "CustomObject");
 
 		ObjectPortlet.viewEntry(entry = "Entry 1");
-
-		
-
-
-
-		
-
-		
-
 	}
 
 	@description = "LPS-135397 - Verify if it's possible to add a Field for the Block with one column"
