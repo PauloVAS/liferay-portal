@@ -1921,6 +1921,7 @@ definition {
 	}
 
 	@description = "LPS-135635 - Verify it is not possible to update the Object name after it is published"
+	@ignore = "Test Stub"
 	@priority = "5"
 	test CannotUpdateObjectNameAfterPublished {
 		property portal.acceptance = "true";
@@ -1929,6 +1930,13 @@ definition {
 			labelName = "Custom Object",
 			objectName = "CustomObject",
 			pluralLabelName = "Custom Objects");
+
+		ObjectAdmin.addObjectFieldViaAPI(
+			fieldLabelName = "Field",
+			fieldName = "customObjectField",
+			fieldType = "String",
+			isRequired = "false",
+			objectName = "CustomObject");
 
 		ObjectAdmin.publishObjectViaAPI(objectName = "CustomObject");
 
@@ -2021,6 +2029,7 @@ definition {
 	}
 
 	@description = "LPS-135549 - Verify it is possible to Publish a Custom Object"
+	@ignore = "Test Stub"
 	@priority = "5"
 	test CanPublishCustomObject {
 		property portal.acceptance = "true";
@@ -2029,6 +2038,14 @@ definition {
 			labelName = "Custom Object",
 			objectName = "CustomObject",
 			pluralLabelName = "Custom Objects");
+
+		ObjectAdmin.addObjectFieldViaAPI(
+			fieldLabelName = "Not Required Field",
+			fieldName = "date",
+			fieldType = "Date",
+			isRequired = "false",
+			objectName = "CustomObject");
+		
 
 		ObjectAdmin.openObjectAdmin();
 
@@ -2067,6 +2084,7 @@ definition {
 	}
 
 	@description = "LPS-135551 - Verify it is possible to scope the Object by Company"
+	@ignore = "Test Stub"
 	@priority = "5"
 	test CanScopeObjectByCompany {
 		property portal.acceptance = "true";
@@ -2077,6 +2095,13 @@ definition {
 			panelCategoryKey = "control_panel.account_entries_admin",
 			pluralLabelName = "Custom Objects",
 			scope = "company");
+
+		ObjectAdmin.addObjectFieldViaAPI(
+			fieldLabelName = "Field",
+			fieldName = "customObjectField",
+			fieldType = "String",
+			isRequired = "false",
+			objectName = "CustomObject");
 
 		ObjectAdmin.publishObjectViaAPI(objectName = "CustomObject");
 
@@ -2090,6 +2115,7 @@ definition {
 	}
 
 	@description = "LPS-135551 - Verify it is possible to scope the Object by Site"
+	@ignore = "Test Stub"
 	@priority = "5"
 	test CanScopeObjectBySite {
 		property portal.acceptance = "true";
@@ -2100,6 +2126,13 @@ definition {
 			panelCategoryKey = "site_administration.content",
 			pluralLabelName = "Custom Objects",
 			scope = "site");
+
+		ObjectAdmin.addObjectFieldViaAPI(
+			fieldLabelName = "Field",
+			fieldName = "customObjectField",
+			fieldType = "String",
+			isRequired = "false",
+			objectName = "CustomObject");
 
 		ObjectAdmin.publishObjectViaAPI(objectName = "CustomObject");
 
