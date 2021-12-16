@@ -2045,7 +2045,6 @@ definition {
 			fieldType = "Date",
 			isRequired = "false",
 			objectName = "CustomObject");
-		
 
 		ObjectAdmin.openObjectAdmin();
 
